@@ -1,7 +1,11 @@
+let cardOne = false;
+let cardTwo = false;
 let arrCards = [];
 arrCards.push("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "TwentyOne", "TwentyTwo", "TwentyThree", "TwentyFour", "TwentyFive", "TwentySix", "TwentySeven", "TwentyEight")
 let arrImages = [];
 arrImages.push("images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp");
+let arrRandomImagesRemoved = [];
+arrRandomImagesRemoved.push("images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp");
 // console.log(arrCards);
 // console.log(arrCards[0]);
 function turnOne(){
@@ -95,9 +99,23 @@ function turnCard(card){
         it replaces the clicked card's source (SRC) with a random selected card from the images array
 
 */
-    let randomInt = RandomInteger()
-    document.getElementById(card).src = arrImages[randomInt];
+    if(!cardOne){
+        //card one selected logic
+        cardOne = true;
+        let randomInt = RandomInteger()
+        console.log("random nr is " + randomInt);
+        document.getElementById(card).src = arrImages[randomInt];
+        arrRandomImagesRemoved.splice(randomInt, 1);
+        console.log(arrRandomImagesRemoved)
+    } else {
+        // card two selected logic
+        let randomInt = RandomInteger()
+        console.log("random nr is " + randomInt);
+        document.getElementById(card).src = arrImages[randomInt];
+        arrRandomImagesRemoved.splice(randomInt, 1);
+        console.log(arrRandomImagesRemoved)
+    }
     return randomInt;
 }
 
-function RandomInteger(){return Math.floor(Math.random() * arrImages.length)}
+function RandomInteger(){return Math.floor(Math.random() * arrRandomImagesRemoved.length)}
