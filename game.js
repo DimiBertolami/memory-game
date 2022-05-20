@@ -1,86 +1,90 @@
+let arrCards = [];
+arrCards.push("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "TwentyOne", "TwentyTwo", "TwentyThree", "TwentyFour", "TwentyFive", "TwentySix", "TwentySeven", "TwentyEight")
+// console.log(arrCards);
+// console.log(arrCards[0]);
 function turnOne(){
-    turnCard("One");
+    turnCard(arrCards[0]);
 }
 function turnTwo(){
-    turnCard("Two");
+    turnCard(arrCards[1]);
 }
 function turnThree(){
-    turnCard("Three");
+    turnCard(arrCards[2]);
 }
 function turnFour(){
-    turnCard("Four");
+    turnCard(arrCards[3]);
 }
 function turnFive(){
-    turnCard("Five");
+    turnCard(arrCards[4]);
 }
 function turnSix(){
-    turnCard("Six");
+    turnCard(arrCards[5]);
 }
 function turnSeven(){
-    turnCard("Seven");
+    turnCard(arrCards[6]);
 }
 function turnEight(){
-    turnCard("Eight");
+    turnCard(arrCards[7]);
 }
 function turnNine(){
-    turnCard("Nine");
+    turnCard(arrCards[8]);
 }
 function turnTen(){
-    turnCard("Ten");
+    turnCard(arrCards[9]);
 }
 function turnEleven(){
-    turnCard("Eleven");
+    turnCard(arrCards[10]);
 }
 function turnTwelve(){
-    turnCard("Twelve");
+    turnCard(arrCards[11]);
 }
 function turnThirteen(){
-    turnCard("Thirteen");
+    turnCard(arrCards[12]);
 }
 function turnFourteen(){
-    turnCard("Fourteen");
+    turnCard(arrCards[13]);
 }
 function turnFifteen(){
-    turnCard("Fifteen");
+    turnCard(arrCards[14]);
 }
 function turnSixteen(){
-    turnCard("Sixteen");
+    turnCard(arrCards[15]);
 }
 function turnSeventeen(){
-    turnCard("Seventeen");
+    turnCard(arrCards[16]);
 }
 function turnEighteen(){
-    turnCard("Eighteen");
+    turnCard(arrCards[17]);
 }
 function turnNineteen(){
-    turnCard("Nineteen");
+    turnCard(arrCards[18]);
 }
 function turnTwenty(){
-    turnCard("Twenty");
+    turnCard(arrCards[19]);
 }
 function turnTwentyOne(){
-    turnCard("TwentyOne");
+    turnCard(arrCards[20]);
 }
 function turnTwentyTwo(){
-    turnCard("TwentyTwo");
+    turnCard(arrCards[21]);
 }
 function turnTwentyThree(){
-    turnCard("TwentyThree");
+    turnCard(arrCards[22]);
 }
 function turnTwentyFour(){
-    turnCard("TwentyFour");
+    turnCard(arrCards[23]);
 }
 function turnTwentyFive(){
-    turnCard("TwentyFive");
+    turnCard(arrCards[24]);
 }
 function turnTwentySix(){
-    turnCard("TwentySix");
+    turnCard(arrCards[25]);
 }
 function turnTwentySeven(){
-    turnCard("TwentySeven");
+    turnCard(arrCards[26]);
 }
 function turnTwentyEight(){
-    turnCard("TwentyEight");
+    turnCard(arrCards[27]);
 }
 
 function turnCard(card){
