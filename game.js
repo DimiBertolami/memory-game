@@ -6,6 +6,8 @@ let arrImages = [];
 arrImages.push("images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp");
 let arrRandomImagesRemoved = [];
 arrRandomImagesRemoved.push("images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp");
+let arrRandomImages2Removed = [];
+arrRandomImages2Removed.push("images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp");
 // console.log(arrCards);
 // console.log(arrCards[0]);
 function turnOne(){
@@ -95,27 +97,52 @@ function turnTwentyEight(){
 
 function turnCard(card){
 /*
-    Maybe some little explanation as what this does:
-        it replaces the clicked card's source (SRC) with a random selected card from the images array
+    if
+    once you click a card, cardOne becomes true.
+    then it chooses a random number and logs it to my console
+    then it updates the clicked card with a random selected image from my image array
+    This should lock in the image behind the clicked card but it does not yet do so
+    now it just removes the clicked image from the array to track which images have already been
+    assigned to which card
+    else
+    here i need to check if card one source is the same as card2 source if so, stay turned around
+    otherwise flip card back over. but i'm not there yet
 
 */
+    let randomInt = RandomInteger(arrRandomImagesRemoved);
+    let randomInt2 = RandomInteger(arrRandomImages2Removed)
+// if card One is not true
     if(!cardOne){
-        //card one selected logic
-        cardOne = true;
-        let randomInt = RandomInteger()
-        console.log("random nr is " + randomInt);
-        document.getElementById(card).src = arrImages[randomInt];
-        arrRandomImagesRemoved.splice(randomInt, 1);
-        console.log(arrRandomImagesRemoved)
+// and if card Two is not true
+        if(!cardTwo){
+            //card one selected logic (card Two not selected yet) it's a first time click
+            cardOne = true;
+            console.log("random nr(1) is " + randomInt);
+            document.getElementById(card).src = arrImages[randomInt];
+            return randomInt;
+
+        }
+        // if card one equals card two stay
+        // arrRandomImagesRemoved.splice(randomInt, 1);
+        // console.log(arrRandomImagesRemoved)
     } else {
-        // card two selected logic
-        let randomInt = RandomInteger()
-        console.log("random nr is " + randomInt);
-        document.getElementById(card).src = arrImages[randomInt];
-        arrRandomImagesRemoved.splice(randomInt, 1);
-        console.log(arrRandomImagesRemoved)
+        //card one is true
+        // if card two is false
+        if(!cardTwo) {
+            cardTwo = true;
+            console.log("random nr(2) is " + randomInt2);
+            document.getElementById(card).src = arrImages[randomInt2];
+            return randomInt2;
+        } else {
+            //card one is true
+            //card two is true
+        }
+        // if not imageTwo selected is true
+        // arrRandomImagesRemoved.splice(randomInt, 1);
+        // console.log(arrRandomImagesRemoved)
+        // arrRandomImages2Removed.splice(randomInt, 1);
+        // console.log(arrRandomImagesRemoved)
     }
-    return randomInt;
 }
 
-function RandomInteger(){return Math.floor(Math.random() * arrRandomImagesRemoved.length)}
+function RandomInteger(array){return Math.floor(Math.random() * array.length)}
