@@ -1,94 +1,103 @@
 let arrCards = [];
 arrCards.push("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "TwentyOne", "TwentyTwo", "TwentyThree", "TwentyFour", "TwentyFive", "TwentySix", "TwentySeven", "TwentyEight")
+let arrImages = [];
+arrImages.push("images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp");
 // console.log(arrCards);
 // console.log(arrCards[0]);
 function turnOne(){
-    turnCard(arrCards[0]);
+    console.log(turnCard(arrCards[0]));
 }
 function turnTwo(){
-    turnCard(arrCards[1]);
+    console.log(turnCard(arrCards[1]));
 }
 function turnThree(){
-    turnCard(arrCards[2]);
+    console.log(turnCard(arrCards[2]));
 }
 function turnFour(){
-    turnCard(arrCards[3]);
+    console.log(turnCard(arrCards[3]));
 }
 function turnFive(){
-    turnCard(arrCards[4]);
+    console.log(turnCard(arrCards[4]));
 }
 function turnSix(){
-    turnCard(arrCards[5]);
+    console.log(turnCard(arrCards[5]));
 }
 function turnSeven(){
-    turnCard(arrCards[6]);
+    console.log(turnCard(arrCards[6]));
 }
 function turnEight(){
-    turnCard(arrCards[7]);
+    console.log(turnCard(arrCards[7]));
 }
 function turnNine(){
-    turnCard(arrCards[8]);
+    console.log(turnCard(arrCards[8]));
 }
 function turnTen(){
-    turnCard(arrCards[9]);
+    console.log(turnCard(arrCards[9]));
 }
 function turnEleven(){
-    turnCard(arrCards[10]);
+    console.log(turnCard(arrCards[10]));
 }
 function turnTwelve(){
-    turnCard(arrCards[11]);
+    console.log(turnCard(arrCards[11]));
 }
 function turnThirteen(){
-    turnCard(arrCards[12]);
+    console.log(turnCard(arrCards[12]));
 }
 function turnFourteen(){
-    turnCard(arrCards[13]);
+    console.log(turnCard(arrCards[13]));
 }
 function turnFifteen(){
-    turnCard(arrCards[14]);
+    console.log(turnCard(arrCards[14]));
 }
 function turnSixteen(){
-    turnCard(arrCards[15]);
+    console.log(turnCard(arrCards[15]));
 }
 function turnSeventeen(){
-    turnCard(arrCards[16]);
+    console.log(turnCard(arrCards[16]));
 }
 function turnEighteen(){
-    turnCard(arrCards[17]);
+    console.log(turnCard(arrCards[17]));
 }
 function turnNineteen(){
-    turnCard(arrCards[18]);
+    console.log(turnCard(arrCards[18]));
 }
 function turnTwenty(){
-    turnCard(arrCards[19]);
+    console.log(turnCard(arrCards[19]));
 }
 function turnTwentyOne(){
-    turnCard(arrCards[20]);
+    console.log(turnCard(arrCards[20]));
 }
 function turnTwentyTwo(){
-    turnCard(arrCards[21]);
+    console.log(turnCard(arrCards[21]));
 }
 function turnTwentyThree(){
-    turnCard(arrCards[22]);
+    console.log(turnCard(arrCards[22]));
 }
 function turnTwentyFour(){
-    turnCard(arrCards[23]);
+    console.log(turnCard(arrCards[23]));
 }
 function turnTwentyFive(){
-    turnCard(arrCards[24]);
+    console.log(turnCard(arrCards[24]));
 }
 function turnTwentySix(){
-    turnCard(arrCards[25]);
+    console.log(turnCard(arrCards[25]));
 }
 function turnTwentySeven(){
-    turnCard(arrCards[26]);
+    console.log(turnCard(arrCards[26]));
 }
 function turnTwentyEight(){
-    turnCard(arrCards[27]);
+    console.log(turnCard(arrCards[27]));
 }
 
 function turnCard(card){
+/*
+    Maybe some little explanation as what this does:
+        it replaces the clicked card's source (SRC) with a random selected card from the images array
 
-    let img = document.getElementById(card);
-    img.src = "images/cardback.jpg"
+*/
+    let randomInt = RandomInteger()
+    document.getElementById(card).src = arrImages[randomInt];
+    return randomInt;
 }
+
+function RandomInteger(){return Math.floor(Math.random() * arrImages.length)}
