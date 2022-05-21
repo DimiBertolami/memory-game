@@ -2,7 +2,7 @@
     // document.getElementsByClassName("img-fluid").addEventListener("click", () => {
     let count = 0;
     let arrCards = [];
-    arrCards.push("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "TwentyOne", "TwentyTwo", "TwentyThree", "TwentyFour", "TwentyFive", "TwentySix", "TwentySeven", "TwentyEight")
+    arrCards.push("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "TwentyOne", "TwentyTwo", "TwentyThree", "TwentyFour", "TwentyFive", "TwentySix", "TwentySeven", "TwentyEight");
     let arrTurnCards = [];
     arrTurnCards.push = ("TurnOne", "TurnTwo", "TurnThree", "TurnFour", "TurnFive", "TurnSix", "TurnSeven", "TurnEight", "TurnNine", "TurnTen", "TurnEleven", "TurnTwelve", "TurnThirteen", "TurnFourteen", "TurnFifteen", "TurnSixteen", "TurnSeventeen", "TurnEighteen", "TurnNineteen", "TurnTwenty", "TurnTwentyOne", "TurnTwentyTwo", "TurnTwentyThree", "TurnTwentyFour", "TurnTwentyFive", "TurnTwentySix", "TurnTwentySeven", "TurnTwentyEight");
     let arrImages = [];
@@ -19,31 +19,62 @@
         const eImg = bCloneNode.querySelector(".img-fluid")
         // eImg.src = arrImages[RandomInteger()];
         let randomInt = RandomInteger()
-        console.log(arrRandomImagesRemoved);
-
-        if(arrRandomImagesRemoved.length>1){
-            // arrRandomImagesRemoved.splice(arrImages[randomInt], 1);
+        if (arrRandomImagesRemoved.length > 1) {
         } else {
-            console.log(arrRandomImagesRemoved);
             // arrRandomImagesRemoved2.splice(arrImages[randomInt], 1);
         }
         arrHiddenCards.push([i, arrImages[randomInt]]);
-        eImg.src = "images/cardback.jpg"
-        eImg.id = arrCards[count];
-        eImg.alt = arrImages[randomInt];
-        eImg.onclick = arrTurnCards[count];
-
-        // eImg.title = arrImages[randomInt];
-        console.log(eImg);
-        count++;
+        eImg.src="images/cardback.jpg"
+        eImg.title=`turn${arrCards[i]}`;
+        eImg.id=arrCards[i];
+        eImg.alt=arrImages[randomInt];
+        // onclick="GameReset()"
+        alert(`"turn${arrCards[i]}()"`);
+        eImg.onclick= function() {console.log(`turn${arrCards[i]}()`)};
+        console.log(arrTurnCards[i]);
+        // count++;
         document.getElementById("target").appendChild(bCloneNode);
+        console.log(`turn${arrCards[i]}`);
     }
-    console.log(arrHiddenCards);
 
     // });
     function RandomInteger() {
         return Math.floor(Math.random() * arrImages.length)
     }
+
+    function turnCard(card){
+        alert(document.getElementById(card).alt);
+        document.getElementById(card).src = document.getElementById(card).alt;
+    }
+
+    function turnOne() {turnCard(arrCards[0])}
+    function turnTwo() {turnCard(arrCards[1])}
+    function turnThree() {turnCard(arrCards[2])}
+    function turnFour() {turnCard(arrCards[3])}
+    function turnFive() {turnCard(arrCards[4])}
+    function turnSix() {turnCard(arrCards[5])}
+    function turnSeven() {turnCard(arrCards[6])}
+    function turnEight() {turnCard(arrCards[7])}
+    function turnNine() {turnCard(arrCards[8])}
+    function turnTen() {turnCard(arrCards[9])}
+    function turnEleven() {turnCard(arrCards[10])}
+    function turnTwelve() {turnCard(arrCards[11])}
+    function turnThirteen() {turnCard(arrCards[12])}
+    function turnFourteen() {turnCard(arrCards[13])}
+    function turnFifteen() {turnCard(arrCards[14])}
+    function turnSixteen() {turnCard(arrCards[15])}
+    function turnSeventeen() {turnCard(arrCards[16])}
+    function turnEighteen() {turnCard(arrCards[17])}
+    function turnNineteen() {turnCard(arrCards[18])}
+    function turnTwenty() {turnCard(arrCards[19])}
+    function turnTwentyOne() {turnCard(arrCards[20])}
+    function turnTwentyTwo() {turnCard(arrCards[21])}
+    function turnTwentyThree() {turnCard(arrCards[22])}
+    function turnTwentyFour() {turnCard(arrCards[23])}
+    function turnTwentyFive() {turnCard(arrCards[24])}
+    function turnTwentySix() {turnCard(arrCards[25])}
+    function turnTwentySeven() {turnCard(arrCards[26])}
+    function turnTwentyEight() {turnCard(arrCards[27])}
 })();
 
 
@@ -116,144 +147,4 @@
 //
 // function RandomInteger(){return Math.floor(Math.random() * arrImages.length)}
 // function RandomInteger2(array){return Math.floor(Math.random() * array.length)}
-// function turnOne(){
-//     // console.log(
-//         turnCard(arrCards[0])
-// // );
-// }
-// function turnTwo(){
-//     // console.log(
-//         turnCard(arrCards[1])
-//     // );
-// }
-// function turnThree(){
-//     // console.log(
-//         turnCard(arrCards[2])
-//     // );
-// }
-// function turnFour(){
-//     // console.log(
-//         turnCard(arrCards[3])
-//     // );
-// }
-// function turnFive(){
-//     // console.log(
-//         turnCard(arrCards[4]);
-//     // );
-// }
-// function turnSix(){
-//     // console.log(
-//         turnCard(arrCards[5]);
-//     // );
-// }
-// function turnSeven(){
-//     // console.log(
-//         turnCard(arrCards[6]);
-//     // );
-// }
-// function turnEight(){
-//     // console.log(
-//         turnCard(arrCards[7]);
-//     // );
-// }
-// function turnNine(){
-//     // console.log(
-//         turnCard(arrCards[8]);
-//     // );
-// }
-// function turnTen(){
-//     // console.log(
-//         turnCard(arrCards[9]);
-//     // );
-// }
-// function turnEleven(){
-//     // console.log(
-//         turnCard(arrCards[10]);
-//     // );
-// }
-// function turnTwelve(){
-//     // console.log(
-//         turnCard(arrCards[11]);
-//     // );
-// }
-// function turnThirteen(){
-//     // console.log(
-//         turnCard(arrCards[12]);
-//     // );
-// }
-// function turnFourteen(){
-//     // console.log(
-//         turnCard(arrCards[13]);
-//     // );
-// }
-// function turnFifteen(){
-//     // console.log(
-//         turnCard(arrCards[14]);
-//     // );
-// }
-// function turnSixteen(){
-//     // console.log(
-//         turnCard(arrCards[15]);
-//     // );
-// }
-// function turnSeventeen(){
-//     // console.log(
-//         turnCard(arrCards[16]);
-//     // );
-// }
-// function turnEighteen(){
-//     // console.log(
-//         turnCard(arrCards[17]);
-//     // );
-// }
-// function turnNineteen(){
-//     // console.log(
-//         turnCard(arrCards[18]);
-//     // );
-// }
-// function turnTwenty(){
-//     // console.log(
-//         turnCard(arrCards[19]);
-//     // );
-// }
-// function turnTwentyOne(){
-//     // console.log(
-//         turnCard(arrCards[20]);
-//     // );
-// }
-// function turnTwentyTwo(){
-//     // console.log(
-//         turnCard(arrCards[21]);
-//     // );
-// }
-// function turnTwentyThree(){
-//     // console.log(
-//         turnCard(arrCards[22]);
-// // );
-// }
-// function turnTwentyFour(){
-//     // console.log(
-//         turnCard(arrCards[23]);
-//     // );
-// }
-// function turnTwentyFive(){
-//     // console.log(
-//         turnCard(arrCards[24]);
-//     // );
-// }
-// function turnTwentySix(){
-//     // console.log(
-//         turnCard(arrCards[25]);
-//     // );
-// }
-// function turnTwentySeven(){
-//     // console.log(
-//     turnCard(arrCards[26]);
-// // );
-// }
-// function turnTwentyEight(){
-//     // console.log(
-//     turnCard(arrCards[27]);
-// // );
-// }
 //
