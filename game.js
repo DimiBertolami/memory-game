@@ -19,7 +19,8 @@
         const eImg = bCloneNode.querySelector(".img-fluid")
         // eImg.src = arrImages[RandomInteger()];
         let randomInt = RandomInteger()
-        if (arrRandomImagesRemoved.length > 1) {
+        if (arrRandomImagesRemoved.length >= 1) {
+            // arrRandomImagesRemoved2.splice(arrImages[randomInt], 1);
         } else {
             // arrRandomImagesRemoved2.splice(arrImages[randomInt], 1);
         }
@@ -28,16 +29,126 @@
         eImg.title=`turn${arrCards[i]}`;
         eImg.id=arrCards[i];
         eImg.alt=arrImages[randomInt];
-        // onclick="GameReset()"
-        alert(`"turn${arrCards[i]}()"`);
-        eImg.onclick= function() {console.log(`turn${arrCards[i]}()`)};
-        console.log(arrTurnCards[i]);
-        // count++;
+        // alert(arrCards[i]);
+        switch (arrTurnCards[i]){
+            case "One":
+                alert("one");
+                eImg.onclick = function turnOne() {turnCard(arrCards[0])}
+                break;
+            case "Two":
+                eImg.onclick = function turnTwo() {turnCard(arrCards[1])}
+                break;
+            case "Three":
+                eImg.onclick = function turnThree() {turnCard(arrCards[2])}
+                break;
+            case "Four":
+                eImg.onclick = function turnFour() {turnCard(arrCards[3])}
+                break;
+            case "Five":
+                eImg.onclick = function turnFive() {turnCard(arrCards[4])}
+                break;
+            case "Six":
+                eImg.onclick = function turnSix() {turnCard(arrCards[5])}
+                break;
+            case "Seven":
+                eImg.onclick = function turnSeven() {turnCard(arrCards[6])}
+                break;
+            case "Eight":
+                eImg.onclick = function turnEight() {turnCard(arrCards[7])}
+                break;
+            case "Nine":
+                eImg.onclick = function turnNine() {turnCard(arrCards[8])}
+                break;
+            case "Ten":
+                eImg.onclick = function turnTen() {turnCard(arrCards[9])}
+                break;
+            case "Eleven":
+                eImg.onclick = function turnEleven() {turnCard(arrCards[10])}
+                break;
+            case "Twelve":
+                eImg.onclick = function turnTwelve() {turnCard(arrCards[11])}
+                break;
+            case "Thirteen":
+                eImg.onclick = function turnThirteen() {turnCard(arrCards[12])}
+                break;
+            case "Fourteen":
+                eImg.onclick = function turnFourteen() {turnCard(arrCards[13])}
+                break;
+            case "Fifteen":
+                eImg.onclick = function turnFifteen() {turnCard(arrCards[14])}
+                break;
+            case "Sixteen":
+                eImg.onclick = function turnSixteen() {turnCard(arrCards[15])}
+                break;
+            case "Seventeen":
+                eImg.onclick = function turnSeventeen() {turnCard(arrCards[16])}
+                break;
+            case "Eighteen":
+                eImg.onclick = function turnEighteen() {turnCard(arrCards[17])}
+                break;
+            case "Nineteen":
+                eImg.onclick = function turnNineteen() {turnCard(arrCards[18])}
+                break;
+            case "Twenty":
+                eImg.onclick = function turnTwenty() {turnCard(arrCards[19])}
+                break;
+            case "TwentyOne":
+                eImg.onclick = function turnTwentyOne() {turnCard(arrCards[20])}
+                break;
+            case "TwentyTwo":
+                eImg.onclick = function turnTwentyTwo() {turnCard(arrCards[21])}
+                break;
+            case "TwentyThree":
+                eImg.onclick = function turnTwentyThree() {turnCard(arrCards[22])}
+                break;
+            case "TwentyFour":
+                eImg.onclick = function turnTwentyFour() {turnCard(arrCards[23])}
+                break;
+            case "TwentyFive":
+                eImg.onclick = function turnTwentyFive() {turnCard(arrCards[24])}
+                break;
+            case "TwentySix":
+                eImg.onclick = function turnTwentySix() {turnCard(arrCards[25])}
+                break;
+            case "TwentySeven":
+                eImg.onclick = function turnTwentySeven() {turnCard(arrCards[26])}
+                break;
+            case "TwentyEight":
+                eImg.onclick= function turnTwentyEight() {turnCard(arrCards[27])}
+                break;
+            default:
+                break;
+       }
+        // eImg.onclick= function turnTwo() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnThree() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnFour() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnFive() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnSix() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnSeven() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnEight() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnNine() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnEleven() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwelve() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnThirteen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnFourteen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnFifteen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnSixteen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnSeventeen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnEighteen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnNineteen() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwenty() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwentyOne() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwentyTwo() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwentyThree() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwentyFour() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwentyFive() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwentySix() {turnCard(arrCards[0]);alert("hi!")}
+        // eImg.onclick= function turnTwentySeven() {turnCard(arrCards[0]);alert("hi!")}
+
         document.getElementById("target").appendChild(bCloneNode);
-        console.log(`turn${arrCards[i]}`);
     }
 
-    // });
     function RandomInteger() {
         return Math.floor(Math.random() * arrImages.length)
     }
@@ -47,7 +158,7 @@
         document.getElementById(card).src = document.getElementById(card).alt;
     }
 
-    function turnOne() {turnCard(arrCards[0])}
+
     function turnTwo() {turnCard(arrCards[1])}
     function turnThree() {turnCard(arrCards[2])}
     function turnFour() {turnCard(arrCards[3])}
