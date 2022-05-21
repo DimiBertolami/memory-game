@@ -31,7 +31,7 @@
         let randomIntX = RandomInteger2(arrRandomImagesRemoved2);
         console.log(arrRandomImagesRemoved)
         console.log(i + " " + arrHiddenCards[i] + " " + randomIntX + " from a maximum of " + arrRandomImagesRemoved2.length);
-        eImg.src="images/cardback.jpg"
+        eImg.src="images/cardback.jpg";
         eImg.title=`turn${arrCards[i]}`;
         eImg.id=arrCards[i];
         eImg.alt=arrImages[randomInt];
@@ -125,7 +125,7 @@
             default:
                 // alert("bleh!");
                 break;
-       }
+        }
         if(i===7 || i===14 || i===21 || i===28){
             // br = document.createElement("br");
             document.getElementById("target").appendChild(document.createElement("br"));
@@ -163,6 +163,7 @@
                 console.log(document.getElementById(myFirstCard).src);
                 console.log(document.getElementById(card).src);
                 // count=0
+                alert("flipping cards back around");
                 document.getElementById(myFirstCard).src = "images/cardback.jpg"
                 document.getElementById(card).src        = "images/cardback.jpg"
             }
