@@ -194,8 +194,10 @@
             document.getElementById(card).src = document.getElementById(card).alt;
             if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
                 console.log("same");
-                document.getElementById(myFirstCard).disabled;
-                document.getElementById(card).disabled;
+                // document.getElementById(myFirstCard).disabled = true;
+                document.getElementById(myFirstCard).error = true;
+                // document.getElementById(card).disabled = true;
+                document.getElementById(card).error = true;
             } else {
                 console.log("card1 " + card + " is different from " + myFirstCard);
                 document.getElementById(myFirstCard).src = "images/cardback.jpg";
@@ -209,9 +211,9 @@
             count++;
             myFirstCard = card;
         }
-        if (count===-1){
+        if (count === -1) {
             count++;
-            myFirstCard="";
+            myFirstCard = "";
         }
     }
 })();
