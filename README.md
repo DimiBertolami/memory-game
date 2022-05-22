@@ -8,7 +8,7 @@ everyone knows it, everybody has played it
 
 [x] Readme, but that shouldn't even have to be said.
 
-[ ] Explanation on the page itself.
+[x] Explanation on the page itself.
 
 
 ## Nice-to-have features
@@ -21,19 +21,42 @@ everyone knows it, everybody has played it
 [ ] Multiplayer (local).
 
 
-[An interesting link](https://www.youtube.com/watch?v=dQw4w9WgXcQ) I found related to this exercise in case you want to further investigate
+[My Memory Game made with Bootstrap]([https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://dimibertolami.github.io/memory-game/))
 
 
-currently working on these 2 arrays
- arrRandomImagesRemoved
-  arrRandomImagesRemoved2
-  the first one is for the first round of hiding cards the second one for the matching cards.
-  now they random select a number but that number needs to decrease each time a new image is formatted
-  
+currently trying to figure out why my second click doesn't flip the card.. 
+
 ```javascript
-    let arrRandomImagesRemoved = [];
-    let arrRandomImagesRemoved2 = [];
-    function RandomInteger2(array){return Math.floor(Math.random() * array.length)}
+    function turnCard(card) {
+
+        if (count === 2) {
+            console.log("my first card was " + myFirstCard);
+            console.log("my second card was " + card);
+            count = 0;
+        }
+
+        if (count === 1) {
+            document.getElementById(card).src = document.getElementById(card).alt;
+            if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
+                console.log("same");
+                // document.getElementById(myFirstCard).disabled = true;
+                document.getElementById(myFirstCard).error = true;
+                // document.getElementById(card).disabled = true;
+                document.getElementById(card).error = true;
+            } else {
+                console.log("card1 " + card + " is different from " + myFirstCard);
+                document.getElementById(myFirstCard).src = "images/cardback.jpg";
+                document.getElementById(card).src = "images/cardback.jpg";
+            }
+            count++;
+        }
+
+        if (count === 0) {
+            count++;
+            myFirstCard = card;
+            document.getElementById(myFirstCard).src = document.getElementById(card).alt;
+        }
+    }
 
 ```
 
