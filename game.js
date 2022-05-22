@@ -175,11 +175,8 @@
         let h6 = document.getElementById("cheaterID").appendChild(document.createElement("h6"));
         h6.innerHTML = `(${i+1}) ${arrHiddenCards[i]}`;
         document.getElementById("cheaterID").appendChild(document.createElement("br"));
-        // document.getElementById("cheaterID").textContent += `(${i+1}) ${arrHiddenCards[i]}`;
     }
-
-    console.log("hidden images");
-    console.log(arrHiddenCards);
+    console.log(`hidden images ${arrHiddenCards}`);
 
     function turnCard(card) {
         console.log(`counter ${count}`);
@@ -188,15 +185,15 @@
                 if(myFirstCard === myCardTwo){
                     alert("not allowed to click same card twice");
                 } else {
-                    const compare = document.getElementById(myFirstCard).alt === document.getElementById(card).alt ? ` is the same.` : ` is different.`;
-                    console.log(`1st card ${myFirstCard}  ${compare}  2nd card ${card}`);
-                    if(document.getElementById(card).alt===document.getElementById(myFirstCard).alt){
+                    const compare = document.getElementById(myFirstCard).alt === document.getElementById(myCardTwo).alt ? ` is the same.` : ` is different.`;
+                    console.log(`1st card ${myFirstCard}  ${compare}  2nd card ${myCardTwo}`);
+                    if(document.getElementById(myCardTwo).alt===document.getElementById(myFirstCard).alt){
                         document.getElementById(myFirstCard).onclick = null;
-                        document.getElementById(card).onclick = null;
+                        document.getElementById(myCardTwo).onclick = null;
                     } else {
                         // alert("changing back");
                         document.getElementById(myFirstCard).src = "images/cardback.jpg";
-                        document.getElementById(card).src = "images/cardback.jpg";
+                        document.getElementById(myCardTwo).src = "images/cardback.jpg";
                     }
                 }
                 myFirstCard = "";
@@ -204,14 +201,14 @@
                 count = 0;
                 break;
             case 1:
-                document.getElementById(card).src = document.getElementById(card).alt;
-                // document.getElementById(myFirstCard).src = document.getElementById(myFirstCard).alt;
                 myCardTwo = card;
+                document.getElementById(myCardTwo).src = document.getElementById(myCardTwo).alt;
+                // document.getElementById(myFirstCard).src = document.getElementById(myFirstCard).alt;
                 count++;
                 break;
             case 0:
                 myFirstCard = card;
-                document.getElementById(card).src = document.getElementById(card).alt;
+                document.getElementById(myFirstCard).src = document.getElementById(myFirstCard).alt;
                 count++;
                 break;
         }
