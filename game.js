@@ -60,7 +60,7 @@
                 eImg.onclick = function turnEight() {
                     turnCard(arrCards[7])
                 };
-                // document.getElementById("target").appendChild(document.createElement("br"));
+                document.getElementById("target").appendChild(document.createElement("br"));
                 break;
             case 8:
                 eImg.onclick = function turnNine() {
@@ -96,7 +96,7 @@
                 eImg.onclick = function turnFifteen() {
                     turnCard(arrCards[14])
                 };
-                // document.getElementById("target").appendChild(document.createElement("br"));
+                document.getElementById("target").appendChild(document.createElement("br"));
                 break;
             case 15:
                 eImg.onclick = function turnSixteen() {
@@ -132,7 +132,7 @@
                 eImg.onclick = function turnTwentyTwo() {
                     turnCard(arrCards[21])
                 };
-                // document.getElementById("target").appendChild(document.createElement("br"));
+                document.getElementById("target").appendChild(document.createElement("br"));
                 break;
             case 22:
                 eImg.onclick = function turnTwentyThree() {
