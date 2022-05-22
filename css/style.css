@@ -2,3 +2,6 @@
     width: 136px;
     height: 136px;
 }
+.container {
+    display: flex; /* or inline-flex */
+}

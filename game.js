@@ -12,10 +12,9 @@
         const bCloneNode = tElement.content.cloneNode(true);
         const eImg = bCloneNode.querySelector(".img-fluid")
         let randomInt = Math.floor(Math.random() * arrRandomImagesRemoved.length);
-        // let randomInt2 = RandomInteger3();
         eImg.id = arrCards[i];
-        // eImg.src = "images/cardback.jpg";
-        eImg.src = arrRandomImagesRemoved[randomInt];
+        eImg.src = "images/cardback.jpg";
+        // eImg.src = arrRandomImagesRemoved[randomInt];
         eImg.title = `turn${arrCards[i]}`;
         eImg.alt = arrRandomImagesRemoved[randomInt];
         // eImg.alt = "images/cardback.jpg";
@@ -71,7 +70,7 @@
                 eImg.onclick = function turnEight() {
                     turnCard(arrCards[7])
                 };
-                document.getElementById("target").appendChild(document.createElement("br"));
+                // document.getElementById("target").appendChild(document.createElement("br"));
                 break;
             case 8:
                 eImg.onclick = function turnNine() {
@@ -107,7 +106,7 @@
                 eImg.onclick = function turnFifteen() {
                     turnCard(arrCards[14])
                 };
-                document.getElementById("target").appendChild(document.createElement("br"));
+                // document.getElementById("target").appendChild(document.createElement("br"));
                 break;
             case 15:
                 eImg.onclick = function turnSixteen() {
@@ -143,7 +142,7 @@
                 eImg.onclick = function turnTwentyTwo() {
                     turnCard(arrCards[21])
                 };
-                document.getElementById("target").appendChild(document.createElement("br"));
+                // document.getElementById("target").appendChild(document.createElement("br"));
                 break;
             case 22:
                 eImg.onclick = function turnTwentyThree() {
@@ -182,16 +181,6 @@
         }
         document.getElementById("target").appendChild(bCloneNode);
     }
-    // sleep(2000);
-    for (let i = 0; i < 27; i++) {
-        const eImgNode = document.querySelectorAll(".img-fluid")
-        eImgNode.forEach((img) => {
-            img.src = "images/cardback.jpg";
-        });
-
-    }
-    // console.log(arrHiddenCards);
-
 
     function turnCard(card) {
 
@@ -204,10 +193,10 @@
         if (count === 1) {
             document.getElementById(card).src = document.getElementById(card).alt;
             if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
-                //same
                 console.log("same");
+                document.getElementById(myFirstCard).disabled;
+                document.getElementById(card).disabled;
             } else {
-                //different
                 console.log("card1 " + card + " is different from " + myFirstCard);
                 document.getElementById(myFirstCard).src = "images/cardback.jpg";
                 document.getElementById(card).src = "images/cardback.jpg";
@@ -225,15 +214,4 @@
             myFirstCard="";
         }
     }
-
-    /**
-     * Delay for a number of milliseconds
-     */
-    function sleep(delay) {
-        let start = new Date().getTime();
-        while (new Date().getTime() < start + delay){
-            console.log("tick");
-        }
-    }
-
 })();
