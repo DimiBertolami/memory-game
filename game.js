@@ -185,19 +185,17 @@
     function turnCard(card) {
 
         if (count === 2) {
-            console.log("my first card was " + myFirstCard);
-            console.log("my second card was " + card);
             count = 0;
         }
 
         if (count === 1) {
             document.getElementById(card).src = document.getElementById(card).alt;
+            console.log("my first card was " + myFirstCard);
+            console.log("my second card was " + card);
             if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
-                console.log("same");
+                console.log(`my first card ${myFirstCard.alt} is the same as ${card.alt}`);
                 // document.getElementById(myFirstCard).disabled = true;
-                document.getElementById(myFirstCard).error = true;
                 // document.getElementById(card).disabled = true;
-                document.getElementById(card).error = true;
             } else {
                 console.log("card1 " + card + " is different from " + myFirstCard);
                 document.getElementById(myFirstCard).src = "images/cardback.jpg";
@@ -207,13 +205,9 @@
         }
 
         if (count === 0) {
-            document.getElementById(card).src = document.getElementById(card).alt;
             count++;
             myFirstCard = card;
-        }
-        if (count === -1) {
-            count++;
-            myFirstCard = "";
+            document.getElementById(myFirstCard).src = document.getElementById(card).alt;
         }
     }
 })();
