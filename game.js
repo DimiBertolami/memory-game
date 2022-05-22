@@ -182,7 +182,7 @@
         }
         document.getElementById("target").appendChild(bCloneNode);
     }
-    sleep(2000);
+    // sleep(2000);
     for (let i = 0; i < 27; i++) {
         const eImgNode = document.querySelectorAll(".img-fluid")
         eImgNode.forEach((img) => {
@@ -198,6 +198,11 @@
         if (count === 2) {
             console.log("my first card was " + myFirstCard);
             console.log("my second card was " + card);
+            count = 0;
+        }
+
+        if (count === 1) {
+            document.getElementById(card).src = document.getElementById(card).alt;
             if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
                 //same
                 console.log("same");
@@ -207,11 +212,6 @@
                 document.getElementById(myFirstCard).src = "images/cardback.jpg";
                 document.getElementById(card).src = "images/cardback.jpg";
             }
-            count = -1;
-        }
-
-        if (count === 1) {
-            document.getElementById(card).src = document.getElementById(card).alt;
             count++;
         }
 
@@ -232,8 +232,8 @@
     function sleep(delay) {
         let start = new Date().getTime();
         while (new Date().getTime() < start + delay){
-
-        };
+            console.log("tick");
+        }
     }
 
 })();
