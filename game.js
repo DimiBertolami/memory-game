@@ -1,34 +1,24 @@
 (() => {
-    let myFirstCard = "";
-    let count = 0;
-    let arrCards = [];
-    let arrHiddenCards = [];
-    let arrRandomImagesRemoved = [];
     const tElement = document.getElementById("tpl-card");
+    let arrRandomImagesRemoved = [];
+    let arrHiddenCards = [];
+    let myFirstCard = "empty";
+    let myCardTwo = "empty";
+    let arrCards = [];
+    let count = 0;
     arrCards.push("One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty", "TwentyOne", "TwentyTwo", "TwentyThree", "TwentyFour", "TwentyFive", "TwentySix", "TwentySeven", "TwentyEight");
     arrRandomImagesRemoved.push("images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp", "images/1.webp", "images/2.webp", "images/3.webp", "images/4.webp", "images/5.webp", "images/6.webp", "images/7.webp", "images/8.webp", "images/9.webp", "images/10.webp", "images/11.webp", "images/12.webp", "images/13.webp", "images/14.webp");
-
     for (let i = 0; i < arrCards.length; i++) {
         const bCloneNode = tElement.content.cloneNode(true);
         const eImg = bCloneNode.querySelector(".img-fluid")
         let randomInt = Math.floor(Math.random() * arrRandomImagesRemoved.length);
         eImg.id = arrCards[i];
         eImg.src = "images/cardback.jpg";
-        // eImg.src = arrRandomImagesRemoved[randomInt];
         eImg.title = `turn${arrCards[i]}`;
         eImg.alt = arrRandomImagesRemoved[randomInt];
-        // eImg.alt = "images/cardback.jpg";
         arrHiddenCards.push(arrRandomImagesRemoved[randomInt]);
-        console.log(`${i}) removing ${arrRandomImagesRemoved[randomInt]} from  arrRandomImagesRemoved ( lenght: ${arrRandomImagesRemoved.length} )`)
         let index = arrRandomImagesRemoved.indexOf(arrRandomImagesRemoved[randomInt], 0);
-        console.log("index " + index);
         arrRandomImagesRemoved.splice(index, 1);
-        console.log("arrHiddenCards");
-        console.log(arrHiddenCards);
-        console.log("arrRandomImagesRemoved");
-        console.log(arrRandomImagesRemoved);
-        console.log("___________________________________________________________");
-        // console.log(`${arrRandomImagesRemoved[randomInt]}`);
         switch (i) {
             case 0:
                 // alert(`One ${arrTurnCards[i]}`);
@@ -181,41 +171,48 @@
         }
         document.getElementById("target").appendChild(bCloneNode);
     }
+    for (let i = 0; i < arrHiddenCards.length; i++) {
+        let h6 = document.getElementById("cheaterID").appendChild(document.createElement("h6"));
+        h6.innerHTML = `(${i+1}) ${arrHiddenCards[i]}`;
+        document.getElementById("cheaterID").appendChild(document.createElement("br"));
+        // document.getElementById("cheaterID").textContent += `(${i+1}) ${arrHiddenCards[i]}`;
+    }
+
+    console.log("hidden images");
+    console.log(arrHiddenCards);
 
     function turnCard(card) {
         console.log(`counter ${count}`);
         switch (count) {
-            case 3:
-                console.log("cards were not the same");
-                document.getElementById(card).src = "images/cardback.jpg";
-                document.getElementById(myFirstCard).src = "images/cardback.jpg";
-                myFirstCard = "";
-                count = 0;
-                break;
             case 2:
-                console.log("cards were the same");
+                if(myFirstCard === myCardTwo){
+                    alert("not allowed to click same card twice");
+                } else {
+                    const compare = document.getElementById(myFirstCard).alt === document.getElementById(card).alt ? ` is the same.` : ` is different.`;
+                    console.log(`1st card ${myFirstCard}  ${compare}  2nd card ${card}`);
+                    if(document.getElementById(card).alt===document.getElementById(myFirstCard).alt){
+                        document.getElementById(myFirstCard).onclick = null;
+                        document.getElementById(card).onclick = null;
+                    } else {
+                        // alert("changing back");
+                        document.getElementById(myFirstCard).src = "images/cardback.jpg";
+                        document.getElementById(card).src = "images/cardback.jpg";
+                    }
+                }
                 myFirstCard = "";
+                myCardTwo = "";
                 count = 0;
                 break;
             case 1:
-                console.log(`1st card ${myFirstCard}    2nd card ${card}`);
-                if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
-                    // document.getElementById(myFirstCard).src = document.getElementById(myFirstCard).alt;
-                    document.getElementById(card).src = document.getElementById(card).alt;
-                    document.getElementById(myFirstCard).onclick = null;
-                    document.getElementById(card).onclick = null;
-                    console.log(`are the same!!`);
-                } else {
-                    document.getElementById(card).src = document.getElementById(card).alt;
-                    console.log(`are different!!`);
-                    count++;
-                }
+                document.getElementById(card).src = document.getElementById(card).alt;
+                // document.getElementById(myFirstCard).src = document.getElementById(myFirstCard).alt;
+                myCardTwo = card;
                 count++;
                 break;
             case 0:
-                count++;
-                document.getElementById(card).src = document.getElementById(card).alt;
                 myFirstCard = card;
+                document.getElementById(card).src = document.getElementById(card).alt;
+                count++;
                 break;
         }
     }
