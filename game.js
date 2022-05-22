@@ -183,31 +183,40 @@
     }
 
     function turnCard(card) {
-
-        if (count === 2) {
-            count = 0;
-        }
-
-        if (count === 1) {
-            document.getElementById(card).src = document.getElementById(card).alt;
-            console.log("my first card was " + myFirstCard);
-            console.log("my second card was " + card);
-            if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
-                console.log(`my first card ${myFirstCard.alt} is the same as ${card.alt}`);
-                // document.getElementById(myFirstCard).disabled = true;
-                // document.getElementById(card).disabled = true;
-            } else {
-                console.log("card1 " + card + " is different from " + myFirstCard);
-                document.getElementById(myFirstCard).src = "images/cardback.jpg";
+        console.log(`counter ${count}`);
+        switch (count) {
+            case 3:
+                console.log("cards were not the same");
                 document.getElementById(card).src = "images/cardback.jpg";
-            }
-            count++;
-        }
-
-        if (count === 0) {
-            count++;
-            myFirstCard = card;
-            document.getElementById(myFirstCard).src = document.getElementById(card).alt;
+                document.getElementById(myFirstCard).src = "images/cardback.jpg";
+                myFirstCard = "";
+                count = 0;
+                break;
+            case 2:
+                console.log("cards were the same");
+                myFirstCard = "";
+                count = 0;
+                break;
+            case 1:
+                console.log(`1st card ${myFirstCard}    2nd card ${card}`);
+                if (document.getElementById(myFirstCard).src === document.getElementById(card).src) {
+                    // document.getElementById(myFirstCard).src = document.getElementById(myFirstCard).alt;
+                    document.getElementById(card).src = document.getElementById(card).alt;
+                    document.getElementById(myFirstCard).onclick = null;
+                    document.getElementById(card).onclick = null;
+                    console.log(`are the same!!`);
+                } else {
+                    document.getElementById(card).src = document.getElementById(card).alt;
+                    console.log(`are different!!`);
+                    count++;
+                }
+                count++;
+                break;
+            case 0:
+                count++;
+                document.getElementById(card).src = document.getElementById(card).alt;
+                myFirstCard = card;
+                break;
         }
     }
 })();
