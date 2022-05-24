@@ -1,5 +1,7 @@
 # memory-game
 everyone knows it, everybody has played it
+so the goal was to create a memory game and at first I started with 28 hardcoded cards. I deliberately chose that many because I knew in advance it that this decision would haunt me throughout the task. halfway I restarted and started using the template element to spawn my cards which seemed to do a better job in helping me write clean code. Still one small issue to solve is the one,two click.. with me it's now a one two three click system.. the third locks in the choice or flips the cards back around.
+
 
 ## Must-have features
 [x] Clicking cards turns them around.
